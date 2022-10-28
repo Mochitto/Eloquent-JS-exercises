@@ -5,12 +5,14 @@ class Group {
 
     add(value) {
         if (this.has(value)) return this;
-        else return new Group(this.set.concat([value])) // Pushing would change the original array, this creates a new one
+        // Pushing would change the original array, this creates a new one
+        else return new Group(this.set.concat([value])) 
     }
 
     delete(value) {
         if (!this.has(value)) return this;
-        else return new Group(this.set.filter(element => element != value)) // Filter takes care of deleting the unwanted value
+        // Filter takes care of deleting the unwanted value
+        else return new Group(this.set.filter(element => element != value)) 
     }
 
     has(value) {
