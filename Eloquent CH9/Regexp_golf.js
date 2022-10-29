@@ -1,6 +1,6 @@
 // Fill in the regular expressions
 
-verify(/(ca(?:r|t))/,
+verify(/(ca[rt])/,
        ["my car", "bad cats"],
        ["camper", "high art"]);
 
@@ -8,7 +8,7 @@ verify(/(pr?op)/,
        ["pop culture", "mad props"],
        ["plop", "prrrop"]);
 
-verify(/(ferr(?:(?:y)|(?:et)|(?:ari)))/,
+verify(/(ferr(?:y|et|ari))/,
        ["ferret", "ferry", "ferrari"],
        ["ferrum", "transfer A"]);
 
@@ -16,7 +16,7 @@ verify(/\b(\w+ious)\b/,
        ["how delicious", "spacious room"],
        ["ruinous", "consciousness"]);
 
-verify(/(\s[\.,;])/,
+verify(/(\s[.,;])/,
        ["bad punctuation ."],
        ["escape the period"]);
 
@@ -24,7 +24,7 @@ verify(/(\w{6,})/,
        ["Siebentausenddreihundertzweiundzwanzig"],
        ["no", "three small words"]);
 
-verify(/(\b[^e\s]+?\b)/i,
+verify(/(\b[^e\W]+\b)/i,
        ["red platypus", "wobbling nest"],
        ["earth bed", "learning ape", "BEET"]);
 
